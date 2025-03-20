@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Portafolio</title>
+  <style>
+    /* Paleta de colores y tipografía */
+    :root {
+      --color-fondo: #f4f4f9;
+      --color-primario: #34495e;
+      --color-texto: #fff;
+      --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--fuente-principal);
+      background-color: var(--color-fondo);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--color-primario);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+
+    /* Sección "Sobre mí" */
+    section#about {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    section#about h2 {
+      color: var(--color-primario);
+    }
+
+    /* Sección "Proyectos" */
+    section#projects {
+      background: #fff;
+      padding: 40px 0;
+    }
+
+    section#projects h2 {
+      text-align: center;
+      color: var(--color-primario);
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para cada tarjeta de proyecto */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .proyecto {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+      max-width: 350px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Colores distintos para cada proyecto */
+    .proyecto.proyecto1 {
+      background-color: #e74c3c; /* Rojo */
+    }
+    .proyecto.proyecto2 {
+      background-color: #3498db; /* Azul */
+    }
+    .proyecto.proyecto3 {
+      background-color: #f1c40f; /* Amarillo */
+    }
+
+    /* Animación al pasar el cursor */
+    .proyecto:hover {
+      transform: scale(1.1);
+    }
+
+    /* Overlay para mostrar título y descripción sobre el fondo */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: var(--color-texto);
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Sección "Contacto" */
+    section#contact {
+      padding: 40px 0;
+      background: var(--color-fondo);
+      text-align: center;
+    }
+
+    section#contact h2 {
+      color: var(--color-primario);
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      background: var(--color-primario);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    footer {
+      background: var(--color-primario);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado y navegación -->
+  <header>
+    <h1>Mi Portafolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Sección "Sobre mí" -->
+    <section id="about">
+      <h2>Sobre mí</h2>
+      <p>Soy un desarrollador apasionado por crear soluciones digitales innovadoras. Aquí encontrarás algunos de mis proyectos y mi información de contacto.</p>
+    </section>
+
+    <!-- Sección "Proyectos" -->
+    <section id="projects">
+      <h2>Proyectos</h2>
+      <div class="grid">
+        <!-- Proyecto 1: Calculadora -->
+        <div class="proyecto proyecto1">
+          <div class="overlay">
+            <h3>Proyecto 1 - Calculadora</h3>
+            <p>Una aplicación de calculadora simple.</p>
+          </div>
+        </div>
+        <!-- Proyecto 2: Contraseña -->
+        <div class="proyecto proyecto2">
+          <div class="overlay">
+            <h3>Proyecto 2 - Generador de Contraseñas</h3>
+            <p>Genera contraseñas seguras.</p>
+          </div>
+        </div>
+        <!-- Proyecto 3: App Bancaria -->
+        <div class="proyecto proyecto3">
+          <div class="overlay">
+            <h3>Proyecto 3 - App Bancaria</h3>
+            <p>Interfaz de una aplicación bancaria.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección "Contacto" -->
+    <section id="contact">
+      <h2>Contacto</h2>
+      <form action="#" method="post">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Mi Portafolio. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+</footer>
+
+<!-- Coloca aquí el script -->
+<script src="script.js"></script>
+</body>
+</html>
